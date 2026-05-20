@@ -10,7 +10,13 @@ jobs:
       - name: Say Hello
         run: echo "Hello From demo.yml"
 
-      - name: Install
+      - name: ENV
         env:
           ENV_VAL: Checking ENV
         run: echo "Printing ENV here -> $ENV_VAL"
+
+      - name: Secrets
+        env:
+          App_ENV: Dev
+          DB_password: ${{ secrets.DB_password }}
+        run: echo "db password is $DB_password"
