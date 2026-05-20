@@ -9,3 +9,8 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello From demo.yml"
+
+      - name: Install
+        env:
+          ENV_VAL: Checking ENV
+        run: echo "Printing ENV here -> $ENV_VAL"
