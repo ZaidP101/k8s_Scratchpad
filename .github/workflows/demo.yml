@@ -1,0 +1,12 @@
+name: Demo CI
+
+on: 
+  push
+
+jobs:
+  build :
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: Say Hello
+        run: echo "Hello From demo.yml"
