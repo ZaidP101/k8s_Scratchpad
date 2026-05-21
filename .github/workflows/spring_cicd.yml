@@ -56,4 +56,4 @@ jobs:
           context: spring-cicd
           push: true
           tags: |
-              ${{secrets.DOCKER_USERNAME}}/hello-spring
+            ${{secrets.DOCKER_USERNAME}}/hello-spring
