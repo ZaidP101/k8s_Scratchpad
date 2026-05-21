@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup JDK
         uses: actions/setup-java@v5
@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: test-report
-          path: spring-cicd/target/surefire-report
+          path: spring-cicd/target/surefire-reports
 
   docker-build-push:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup JDK
         uses: actions/setup-java@v5
@@ -42,7 +42,7 @@ jobs:
 
       - name: Build & test
         working-directory: spring-cicd
-        run: mvn -B clean package -DskipTest
+        run: mvn -B clean package -DskipTests
 
       - name: login dockerhub
         uses: docker/login-action@v4
