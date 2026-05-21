@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build-test:
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -27,7 +27,7 @@ jobs:
           path: spring-cicd/target/surefire-report
 
   docker-build-push:
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: build-test
 
     steps:
